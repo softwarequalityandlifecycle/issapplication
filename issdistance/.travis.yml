@@ -24,7 +24,7 @@ jobs:
       script: skip
       deploy: &heroku
         provider: heroku
-        app: issdistance
+        app: issdistance-staging
         api_key: $HEROKU_API_KEY
 #    - stage: automatic user acceptance and performance tests on staging
 #      script:
