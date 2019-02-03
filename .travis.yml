@@ -3,23 +3,23 @@ jobs:
     - stage: build application
       script:
         - mvn install
-#    - stage: static code analysis
-#      addons:
-#        sonarcloud:
-#          organization: softwarequalityandlifecycle
-#          token: $SONAR_TOKEN
-#      script:
-#        - mvn org.jacoco:jacoco-maven-plugin:prepare-agent javadoc:javadoc verify sonar:sonar
-#        - cd ..
-#        - "git clone https://github.com/softwarequalityandlifecycle/documentation.git"
-#        - rm -rf documentation/generated/jacoco-ut docs/generated/jacoco-it docs/generated/apidocs
-#        - cp -r application/target/site/jacoco-ut docs/generated/
-#        - cp -r application/target/site/jacoco-it docs/generated/
-#        - cp -r application/target/site/apidocs docs/generated/
-#        - cd documentation/generated
-#        - git add --all
-#        - git commit -am "update documentation"
-#        - git push "https://${TRAVIS_GITHUB_TOKEN}@github.com/softwarequalityandlifecycle/documentation.git" master
+    - stage: static code analysis
+      addons:
+        sonarcloud:
+          organization: softwarequalityandlifecycle
+          token: $SONAR_TOKEN
+      script:
+        - mvn org.jacoco:jacoco-maven-plugin:prepare-agent javadoc:javadoc verify sonar:sonar
+        - cd ..
+        - "git clone https://github.com/softwarequalityandlifecycle/documentation.git"
+        - rm -rf documentation/generated/jacoco-ut documentation/generated/jacoco-it documentation/generated/apidocs
+        - cp -r application/target/site/jacoco-ut docs/generated/
+        - cp -r application/target/site/jacoco-it docs/generated/
+        - cp -r application/target/site/apidocs docs/generated/
+        - cd documentation/generated
+        - git add --all
+        - git commit -am "update documentation"
+        - git push "https://${TRAVIS_GITHUB_TOKEN}@github.com/softwarequalityandlifecycle/documentation.git" master
     - stage: deploy to staging
       script: skip
       deploy: &heroku
