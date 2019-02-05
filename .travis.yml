@@ -26,23 +26,23 @@ jobs:
         provider: heroku
         app: issdistance-staging
         api_key: $HEROKU_API_KEY
-   - stage: automatic user acceptance and performance tests on staging
-     script:
-       - cd ..
-       - "git clone https://github.com/softwarequalityandlifecycle/tests.git"
-       - cd tests
-       - mvn verify
-       - cd ..
-       - "git clone https://github.com/softwarequalityandlifecycle/documentation.git"
-       - rm -rf documentation/generated/cukedoctor documentation/generated/walk_through.mp4
-       - cp -r tests/target/cukedoctor documentation/generated/
-       - rm -rf documentation/generated/jmeter
-       - cp -r tests/target/jmeter/reports/performance* documentation/generated/jmeter
-       - cd documentation/generated
-       - ../../tests/scripts/get_testingbot_video.py
-       - git add --all
-       - git commit -am "update documentation"
-       - git push "https://${TRAVIS_GITHUB_TOKEN}@github.com/softwarequalityandlifecycle/documentation.git" master
+    - stage: automatic user acceptance and performance tests on staging
+      script:
+        - cd ..
+        - "git clone https://github.com/softwarequalityandlifecycle/tests.git"
+        - cd tests
+        - mvn verify
+        - cd ..
+        - "git clone https://github.com/softwarequalityandlifecycle/documentation.git"
+        - rm -rf documentation/generated/cukedoctor documentation/generated/walk_through.mp4
+        - cp -r tests/target/cukedoctor documentation/generated/
+        - rm -rf documentation/generated/jmeter
+        - cp -r tests/target/jmeter/reports/performance* documentation/generated/jmeter
+        - cd documentation/generated
+        - ../../tests/scripts/get_testingbot_video.py
+        - git add --all
+        - git commit -am "update documentation"
+        - git push "https://${TRAVIS_GITHUB_TOKEN}@github.com/softwarequalityandlifecycle/documentation.git" master
     - stage: deploy to production
       script: skip
       deploy:
