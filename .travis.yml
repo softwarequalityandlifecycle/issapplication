@@ -13,9 +13,9 @@ jobs:
         - cd ..
         - "git clone https://github.com/softwarequalityandlifecycle/documentation.git"
         - rm -rf documentation/generated/jacoco-ut documentation/generated/jacoco-it documentation/generated/apidocs
-        - cp -r application/target/site/jacoco-ut documentation/generated/
-        - cp -r application/target/site/jacoco-it documentation/generated/
-        - cp -r application/target/site/apidocs documentation/generated/
+        - cp -r issapplication/target/site/jacoco-ut documentation/generated/
+        - cp -r issapplication/target/site/jacoco-it documentation/generated/
+        - cp -r issapplication/target/site/apidocs documentation/generated/
         - cd documentation/generated
         - git add --all
         - git commit -am "update documentation"
