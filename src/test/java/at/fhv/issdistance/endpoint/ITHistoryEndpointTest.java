@@ -7,7 +7,7 @@ import at.fhv.issdistance.models.DistanceHistory;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ITHistoryEndpoint {
+public class ITHistoryEndpointTest {
 
     @Test
     public void testHistory() throws Exception {

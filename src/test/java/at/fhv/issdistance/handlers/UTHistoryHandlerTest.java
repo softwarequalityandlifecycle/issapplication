@@ -2,7 +2,7 @@ package at.fhv.issdistance.handlers;
 
 import org.junit.Test;
 
-public class UTHistoryHandler {
+public class UTHistoryHandlerTest {
 
     @Test(expected = Exception.class)
     public void testAnalyseTokenIsNull() throws Exception {

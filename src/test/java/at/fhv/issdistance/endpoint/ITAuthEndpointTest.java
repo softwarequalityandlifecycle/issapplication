@@ -4,7 +4,7 @@ import at.fhv.issdistance.endpoints.AuthEndpoint;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ITAuthEndpoint {
+public class ITAuthEndpointTest {
 
     @Test
     public void testLogin() throws Exception {

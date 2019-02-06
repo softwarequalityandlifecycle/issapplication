@@ -3,7 +3,7 @@ package at.fhv.issdistance.handlers;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UTAnalysisHandler {
+public class UTAnalysisHandlerTest {
 
     // TEST ANALYSE NULL AND EMPTY TOKEN
     @Test(expected = Exception.class)

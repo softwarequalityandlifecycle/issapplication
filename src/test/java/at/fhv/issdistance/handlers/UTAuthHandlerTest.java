@@ -4,7 +4,7 @@ import at.fhv.issdistance.models.User;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UTAuthHandler {
+public class UTAuthHandlerTest {
 
     // TEST LOGIN
 

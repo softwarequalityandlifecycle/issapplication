@@ -6,7 +6,7 @@ import at.fhv.issdistance.models.DiscoveredResult;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ITAnalysesEndpoint {
+public class ITAnalysesEndpointTest {
 
     @Test
     public void testAnalyze() throws Exception {
