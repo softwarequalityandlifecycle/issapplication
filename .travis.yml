@@ -39,7 +39,6 @@ jobs:
         - rm -rf documentation/generated/jmeter
         - cp -r tests/target/jmeter/reports/performance* documentation/generated/jmeter
         - cd documentation/generated
-        - ../../tests/scripts/get_testingbot_video.py
         - git add --all
         - git commit -am "update documentation"
         - git push "https://${TRAVIS_GITHUB_TOKEN}@github.com/softwarequalityandlifecycle/documentation.git" master
