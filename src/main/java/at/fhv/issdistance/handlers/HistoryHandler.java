@@ -25,6 +25,17 @@ public class HistoryHandler {
 	    return INSTANCE;
 	}
 	
+	public void addHistory(String token, at.fhv.issdistance.models.DiscoveredResult result) throws Exception {
+		// Start of user code addHistory
+		User user = AuthHandler.getInstance().getUserByToken(token);
+		DistanceHistoryItem item = new DistanceHistoryItem();
+		item.setResult(result);
+		item.setLatitude(result.getLatitude());
+		item.setLongitude(result.getLongitude());
+		user.getHistory().getItems().add(item);
+		// End of user code
+	}
+	
 	public at.fhv.issdistance.models.DistanceHistory getHistory(String token) throws Exception {
 		// Start of user code getHistory
 		if (token != null && !token.equals("")) {
@@ -34,17 +45,6 @@ public class HistoryHandler {
 		} else {
 			throw new Exception("Token is empty");
 		}
-		// End of user code
-	}
-	
-	public void addHistory(String token, at.fhv.issdistance.models.DiscoveredResult result) throws Exception {
-		// Start of user code addHistory
-		User user = AuthHandler.getInstance().getUserByToken(token);
-		DistanceHistoryItem item = new DistanceHistoryItem();
-		item.setResult(result);
-		item.setLatitude(result.getLatitude());
-		item.setLongitude(result.getLongitude());
-		user.getHistory().getItems().add(item);
 		// End of user code
 	}
 	

@@ -38,17 +38,6 @@ public class AuthHandler {
 		// End of user code
 	}
 	
-	public at.fhv.issdistance.models.User getUserByToken(String token) throws Exception {
-		// Start of user code getUserByToken
-
-		if(token.equals("") || token == null) {
-			throw new Exception();
-		}
-
-		return users.get(token);
-		// End of user code
-	}
-	
 	public String login(String username) throws Exception {
 		// Start of user code login
 		if (username != null && !username.equals("")) {
@@ -64,6 +53,17 @@ public class AuthHandler {
 		else {
 			throw new Exception("username is empty!");
 		}
+		// End of user code
+	}
+	
+	public at.fhv.issdistance.models.User getUserByToken(String token) throws Exception {
+		// Start of user code getUserByToken
+
+		if(token.equals("") || token == null) {
+			throw new Exception();
+		}
+
+		return users.get(token);
 		// End of user code
 	}
 	
